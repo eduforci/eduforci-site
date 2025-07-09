@@ -106,29 +106,33 @@
 <section id="inscription">
   <h2>Réserver un cours</h2>
   <form action="https://formspree.io/f/xyzjqnoe" method="POST">
-      <label for="name">Nom :</label>
-      <input type="text" id="name" name="name" required>
+    <label for="nom">Nom complet</label>
+    <input type="text" id="nom" name="nom" required>
 
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required>
+    <label for="niveau">Niveau scolaire</label>
+    <select id="niveau" name="niveau">
+      <option>Primaire</option>
+      <option>Collège</option>
+      <option>Lycée</option>
+      <option>Université</option>
+    </select>
 
-      <label for="phone">Téléphone :</label>
-      <input type="tel" id="phone" name="phone">
+    <label for="matiere">Matière souhaitée</label>
+    <input type="text" id="matiere" name="matiere" placeholder="Maths, Anglais, Physique..." required>
 
-      <label for="message">Votre message :</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="telephone">Téléphone</label>
+    <input type="tel" id="telephone" name="telephone" required>
 
-      <button type="submit">Envoyer</button>
+    <label for="message">Message ou demande</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit">Envoyer la demande</button>
   </form>
 </section>
 
 <footer>
   &copy; 2025 EDUFORCI - Tous droits réservés. Contact : 05 94 08 97 81
 </footer>
-
-<a href="https://wa.me/2250575516214" target="_blank" style="position:fixed; bottom:20px; right:20px; background-color:#25d366; color:white; padding:12px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 2px 6px rgba(0,0,0,0.3);">
-  📞 WhatsApp
-</a>
 
 </body>
 </html>
