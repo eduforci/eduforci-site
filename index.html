@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,20 +94,6 @@
       padding: 20px;
       margin-top: 40px;
     }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      font-size: 30px;
-      padding: 15px;
-      border-radius: 50%;
-      text-align: center;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      text-decoration: none;
-    }
     @media screen and (max-width: 600px) {
       form {
         grid-template-columns: 1fr;
@@ -117,17 +104,22 @@
     }
   </style>
 </head>
-<body><header>
+<body>
+<header>
   <img src="logo.png" alt="Logo EDUFORCI">
   <nav>
     <a href="#accueil">Accueil</a>
     <a href="#services">Services</a>
     <a href="#inscription">Inscription</a>
   </nav>
-</header><section class="hero" id="accueil">
+</header>
+
+<section class="hero" id="accueil">
   <h2>Bienvenue chez EDUFORCI</h2>
   <p>Réservez facilement des cours à domicile ou en ligne pour vos enfants, avec des enseignants qualifiés.</p>
-</section><section id="services">
+</section>
+
+<section id="services">
   <h2>Nos services</h2>
   <ul>
     <li>Cours particuliers à domicile</li>
@@ -135,7 +127,9 @@
     <li>Préparation aux examens et concours</li>
     <li>Suivi scolaire hebdomadaire</li>
   </ul>
-</section><section class="stats">
+</section>
+
+<section class="stats">
   <div>
     <h3>+200</h3>
     <p>Parents satisfaits</p>
@@ -148,66 +142,70 @@
     <h3>100%</h3>
     <p>Suivi personnalisé</p>
   </div>
-</section><section id="inscription">
+</section>
+
+<section id="inscription">
   <h2>Réserver un cours</h2>
   <form action="https://formspree.io/f/xyzjqnoe" method="POST">
     <label for="nom">Nom complet</label>
-    <input type="text" id="nom" name="nom" required><label for="telephone">Numéro de téléphone</label>
-<input type="tel" id="telephone" name="telephone" required>
+    <input type="text" id="nom" name="nom" required>
 
-<label for="ville">Ville</label>
-<input type="text" id="ville" name="ville" required>
+    <label for="telephone">Numéro de téléphone</label>
+    <input type="tel" id="telephone" name="telephone" required>
 
-<label for="quartier">Quartier</label>
-<input type="text" id="quartier" name="quartier" required>
+    <label for="ville">Ville</label>
+    <input type="text" id="ville" name="ville" required>
 
-<label for="type-personne">Vous êtes :</label>
-<select id="type-personne" name="type-personne" required>
-  <option value="">-- Choisissez une option --</option>
-  <option value="parent">Parent d’élève</option>
-  <option value="enseignant">À la recherche d’un poste comme enseignant</option>
-</select>
+    <label for="quartier">Quartier</label>
+    <input type="text" id="quartier" name="quartier" required>
 
-<label for="niveau">Niveau de l'élève :</label>
-<select id="niveau" name="niveau" required>
-  <option value="">-- Sélectionnez le niveau --</option>
-  <option value="CP1">CP1</option>
-  <option value="CP2">CP2</option>
-  <option value="CE1">CE1</option>
-  <option value="CE2">CE2</option>
-  <option value="CM1">CM1</option>
-  <option value="CM2">CM2</option>
-  <option value="6e">6e</option>
-  <option value="5e">5e</option>
-  <option value="4e">4e</option>
-  <option value="3e">3e</option>
-  <option value="2nde">2nde</option>
-  <option value="1ère">1ère</option>
-  <option value="Terminale">Terminale</option>
-  <option value="Classe préparatoire">Classe préparatoire</option>
-  <option value="1re année grande école">1re année (Grande école)</option>
-  <option value="2e année grande école">2e année (Grande école)</option>
-  <option value="3e année grande école">3e année (Grande école)</option>
-  <option value="Licence 1">Licence 1</option>
-  <option value="Licence 2">Licence 2</option>
-  <option value="Licence 3">Licence 3</option>
-  <option value="Master 1">Master 1</option>
-  <option value="Master 2">Master 2</option>
-  <option value="Doctorat">Doctorat</option>
-</select>
+    <label for="type-personne">Vous êtes :</label>
+    <select id="type-personne" name="type-personne" required>
+      <option value="">-- Choisissez une option --</option>
+      <option value="parent">Parent d’élève</option>
+      <option value="enseignant">À la recherche d’un poste comme enseignant</option>
+    </select>
 
-<label for="matiere">Matière souhaitée</label>
-<input type="text" id="matiere" name="matiere" placeholder="Ex: Mathématiques, Anglais, Physique...">
+    <label for="niveau">Niveau de l'élève :</label>
+    <select id="niveau" name="niveau" required>
+      <option value="">-- Sélectionnez le niveau --</option>
+      <option value="CP1">CP1</option>
+      <option value="CP2">CP2</option>
+      <option value="CE1">CE1</option>
+      <option value="CE2">CE2</option>
+      <option value="CM1">CM1</option>
+      <option value="CM2">CM2</option>
+      <option value="6e">6e</option>
+      <option value="5e">5e</option>
+      <option value="4e">4e</option>
+      <option value="3e">3e</option>
+      <option value="2nde">2nde</option>
+      <option value="1ère">1ère</option>
+      <option value="Terminale">Terminale</option>
+      <option value="Classe préparatoire">Classe préparatoire</option>
+      <option value="1re année grande école">1re année (Grande école)</option>
+      <option value="2e année grande école">2e année (Grande école)</option>
+      <option value="3e année grande école">3e année (Grande école)</option>
+      <option value="Licence 1">Licence 1</option>
+      <option value="Licence 2">Licence 2</option>
+      <option value="Licence 3">Licence 3</option>
+      <option value="Master 1">Master 1</option>
+      <option value="Master 2">Master 2</option>
+      <option value="Doctorat">Doctorat</option>
+    </select>
 
-<label for="message">Autres précisions (facultatif)</label>
-<textarea id="message" name="message" rows="4" placeholder="Votre demande ou précision ici..."></textarea>
+    <label for="matiere">Matière souhaitée</label>
+    <input type="text" id="matiere" name="matiere" placeholder="Ex: Mathématiques, Anglais, Physique...">
 
-<button type="submit">Envoyer</button>
+    <label for="message">Autres précisions (facultatif)</label>
+    <textarea id="message" name="message" rows="4" placeholder="Votre demande ou précision ici..."></textarea>
 
+    <button type="submit">Envoyer</button>
   </form>
-</section><a href="https://wa.me/2250759128228" class="whatsapp-float" target="_blank">💬</a>
+</section>
 
 <footer>
-  &copy; 2025 EDUFORCI - Tous droits réservés. Contact : 05 94 08 97 81
-</footer></body>
-</html>
+  &copy; 2025 EDUFORCI - Tous droits réservés.
+</footer>
+</body>
+  </html>
