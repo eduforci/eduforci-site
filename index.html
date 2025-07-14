@@ -146,7 +146,7 @@
 
 <section id="inscription">
   <h2>Réserver un cours</h2>
-  <form action="https://formspree.io/f/xyzjqnoe" method="POST">
+  <form action="https://formspree.io/f/xyzjqnoe" method="POST" enctype="multipart/form-data">
     <label for="nom">Nom complet</label>
     <input type="text" id="nom" name="nom" required>
 
@@ -159,12 +159,65 @@
     <label for="quartier">Quartier</label>
     <input type="text" id="quartier" name="quartier" required>
 
-    <label for="type-personne">Vous êtes :</label>
-    <select id="type-personne" name="type-personne" required>
-      <option value="">-- Choisissez une option --</option>
-      <option value="parent">Parent d’élève</option>
-      <option value="enseignant">À la recherche d’un poste comme enseignant</option>
+    <label for="profil">Dites-nous votre profil</label>
+    <select id="profil" name="profil" required>
+      <option value="">-- Sélectionnez votre profil --</option>
+      <option value="parent">Parent cherchant un enseignant à domicile</option>
+      <option value="eleve">Élève à la recherche de cours à domicile</option>
+      <option value="adulte">Adulte souhaitant une formation</option>
+      <option value="autre">Autre (veuillez préciser ci-dessous)</option>
     </select>
+    <textarea name="autre_profil" placeholder="Précisez si autre profil..."></textarea>
+
+    <label for="nb_enfants">Combien d'enfants voulez-vous inscrire ?</label>
+    <input type="number" id="nb_enfants" name="nb_enfants" min="1">
+
+    <label for="etablissement">Établissement de l'élève</label>
+    <input type="text" id="etablissement" name="etablissement">
+
+    <label for="systeme">Système de formation</label>
+    <select id="systeme" name="systeme">
+      <option value="">-- Choisissez un système --</option>
+      <option value="ivoirien">Ivoirien</option>
+      <option value="francais">Français</option>
+      <option value="americain">Américain</option>
+      <option value="autre">Autre (veuillez préciser ci-dessous)</option>
+    </select>
+    <textarea name="autre_systeme" placeholder="Précisez si autre système..."></textarea>
+
+    <label for="besoin">Dites-nous votre besoin et objectif</label>
+    <select id="besoin" name="besoin">
+      <option value="">-- Sélectionnez un objectif --</option>
+      <option value="aide_devoirs">Aide aux devoirs</option>
+      <option value="mise_a_niveau">Cours de mise à niveau</option>
+      <option value="soutien">Soutien scolaire</option>
+      <option value="prepa_concours">Préparation concours</option>
+      <option value="vacances">Cours de vacances</option>
+    </select>
+
+    <label for="canal">Dites-nous le canal souhaité</label>
+    <select id="canal" name="canal">
+      <option value="">-- Choisissez une option --</option>
+      <option value="presentiel">En présentiel</option>
+      <option value="en_ligne">En ligne</option>
+      <option value="les_deux">Les deux</option>
+    </select>
+
+    <label for="horaire">Heures et jours souhaités pour les cours</label>
+    <textarea id="horaire" name="horaire" placeholder="Ex : Lundi et Mercredi de 16h à 18h..."></textarea>
+
+    <label for="profil_souhaite">Dites-nous le profil souhaité</label>
+    <select id="profil_souhaite" name="profil_souhaite">
+      <option value="">-- Choisissez un profil --</option>
+      <option value="repetiteur">Répétiteur</option>
+      <option value="professeur">Professeur</option>
+    </select>
+
+    <label for="emploi_du_temps">Téléverser l'emploi du temps de l'élève</label>
+    <input type="file" id="emploi_du_temps" name="emploi_du_temps" accept=".pdf,.jpg,.png,.jpeg,.doc,.docx">
+
+    <label for="bulletins">Téléverser les derniers bulletins de l'élève</label>
+    <input type="file" id="bulletins" name="bulletins" accept=".pdf,.jpg,.png,.jpeg,.doc,.docx">
 
     <label for="niveau">Niveau de l'élève :</label>
     <select id="niveau" name="niveau" required>
