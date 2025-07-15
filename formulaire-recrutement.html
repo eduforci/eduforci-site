@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulaire de Recrutement - EDUFORCI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+    form {
+      display: grid;
+      gap: 20px;
+    }
+    label {
+      font-weight: 600;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #00994d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #006633;
+    }
+    @media screen and (max-width: 600px) {
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>EDUFORCI - Candidature Enseignant</h2>
+  </header>
+
+  <main>
+    <h1>Formulaire de recrutement</h1>
+    <form action="https://formspree.io/f/mwkdavlw" method="POST" enctype="multipart/form-data">
+      <label for="nom">Nom complet</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="telephone">Numéro de téléphone</label>
+      <input type="tel" id="telephone" name="telephone" required>
+
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" name="email">
+
+      <label for="ville">Ville de résidence</label>
+      <input type="text" id="ville" name="ville" required>
+
+      <label for="niveau_enseignement">Niveaux que vous pouvez encadrer</label>
+      <select id="niveau_enseignement" name="niveau_enseignement" required>
+        <option value="">-- Sélectionnez --</option>
+        <option value="Primaire">Primaire</option>
+        <option value="Collège">Collège</option>
+        <option value="Lycée">Lycée</option>
+        <option value="Supérieur">Supérieur</option>
+        <option value="Tous niveaux">Tous niveaux</option>
+      </select>
+
+      <label for="matiere">Matières que vous enseignez</label>
+      <input type="text" id="matiere" name="matiere" placeholder="Ex : Mathématiques, Physique, Anglais..." required>
+
+      <label for="experience">Expérience ou diplôme</label>
+      <textarea id="experience" name="experience" rows="4" placeholder="Décrivez votre expérience ou vos diplômes..." required></textarea>
+
+      <label for="disponibilite">Disponibilités horaires</label>
+      <textarea id="disponibilite" name="disponibilite" placeholder="Ex : Lundi, mercredi après-midi ; week-ends..." required></textarea>
+
+      <label for="cv">Téléverser votre CV (PDF, Word)</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+      <label for="photo">Téléverser une photo (facultatif)</label>
+      <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png">
+
+      <label for="message">Autres informations (facultatif)</label>
+      <textarea id="message" name="message" placeholder="Autre information utile..."></textarea>
+
+      <button type="submit">📨 Envoyer ma candidature</button>
+    </form>
+  </main>
+</body>
+</html>
