@@ -1,14 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulaire de demande d'un enseignant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
   <h2>Formulaire de demande d'un enseignant</h2>
   <form action="https://formspree.io/f/xyzjqnoe" method="POST" enctype="multipart/form-data">
+    <!-- Tous les champs -->
     <label for="nom">Nom complet</label>
     <input type="text" id="nom" name="nom" required>
 
@@ -81,7 +152,7 @@
     <label for="bulletins">Téléversez les derniers bulletins de l'élève</label>
     <input type="file" id="bulletins" name="bulletins" accept=".pdf,.jpg,.png,.jpeg,.doc,.docx">
 
-    <label for="niveau">Niveau de l'élève/ étudiant:</label>
+    <label for="niveau">Niveau de l'élève/étudiant :</label>
     <select id="niveau" name="niveau" required>
       <option value="">-- Sélectionnez le niveau --</option>
       <option value="CP1">CP1</option>
@@ -117,8 +188,9 @@
 
     <button type="submit">Envoyer</button>
   </form>
+
   <footer>
     &copy; 2025 EDUFORCI - Tous droits réservés.
   </footer>
 </body>
-</html>
+  </html>
