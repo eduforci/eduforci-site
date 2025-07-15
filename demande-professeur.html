@@ -2,61 +2,196 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Demande de professeur - EDUFORCI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire de demande d'un enseignant</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #f2f6fc;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
       margin: 0;
-      padding: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
       color: #333;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 15px 30px;
-      text-align: center;
-    }
-    main {
-      max-width: 700px;
-      margin: 40px auto;
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
       padding: 20px;
-      background: white;
       border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    h1 {
-      color: #003366;
-      text-align: center;
-    }
-    p {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    a {
+
+    label {
       display: block;
-      text-align: center;
-      margin-top: 30px;
-      color: #0059b3;
-      text-decoration: none;
-      font-weight: 600;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
     }
-    a:hover {
-      text-decoration: underline;
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h2>EDUFORCI</h2>
-  </header>
-  <main>
-    <h1>Faire une demande de professeur</h1>
-    <p>Vous pouvez faire votre demande directement via le formulaire de réservation de cours.<br> Cliquez ci-dessous pour y accéder :</p>
-    <a href="index.html#inscription">📋 Accéder au formulaire de réservation</a>
-  </main>
+  <h2>Formulaire de demande d'un enseignant</h2>
+  <form action="https://formspree.io/f/xyzjqnoe" method="POST" enctype="multipart/form-data">
+    <!-- Tous les champs -->
+    <label for="nom">Nom complet</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="telephone">Numéro de téléphone</label>
+    <input type="tel" id="telephone" name="telephone" required>
+
+    <label for="ville">Ville</label>
+    <input type="text" id="ville" name="ville" required>
+
+    <label for="quartier">Quartier</label>
+    <input type="text" id="quartier" name="quartier" required>
+
+    <label for="profil">Dites-nous votre profil</label>
+    <select id="profil" name="profil" required>
+      <option value="">-- Sélectionnez votre profil --</option>
+      <option value="parent">Parent cherchant un enseignant à domicile</option>
+      <option value="eleve">Élève à la recherche de cours à domicile</option>
+      <option value="adulte">Adulte souhaitant une formation</option>
+      <option value="autre">Autre (veuillez préciser ci-dessous)</option>
+    </select>
+    <textarea name="autre_profil" placeholder="Précisez si autre profil..."></textarea>
+
+    <label for="nb_enfants">Combien d'enfants voulez-vous inscrire ?</label>
+    <input type="number" id="nb_enfants" name="nb_enfants" min="1">
+
+    <label for="etablissement">Établissement de l'élève</label>
+    <input type="text" id="etablissement" name="etablissement">
+
+    <label for="systeme">Système de formation</label>
+    <select id="systeme" name="systeme">
+      <option value="">-- Choisissez un système --</option>
+      <option value="ivoirien">Ivoirien</option>
+      <option value="francais">Français</option>
+      <option value="americain">Américain</option>
+      <option value="autre">Autre (veuillez préciser ci-dessous)</option>
+    </select>
+    <textarea name="autre_systeme" placeholder="Précisez si autre système..."></textarea>
+
+    <label for="besoin">Dites-nous votre besoin et objectif</label>
+    <select id="besoin" name="besoin">
+      <option value="">-- Sélectionnez un objectif --</option>
+      <option value="aide_devoirs">Aide aux devoirs</option>
+      <option value="mise_a_niveau">Cours de mise à niveau</option>
+      <option value="soutien">Soutien scolaire</option>
+      <option value="prepa_concours">Préparation concours</option>
+      <option value="vacances">Cours de vacances</option>
+    </select>
+
+    <label for="canal">Dites-nous le canal souhaité</label>
+    <select id="canal" name="canal">
+      <option value="">-- Choisissez une option --</option>
+      <option value="presentiel">En présentiel</option>
+      <option value="en_ligne">En ligne</option>
+      <option value="les_deux">Les deux</option>
+    </select>
+
+    <label for="horaire">Heures et jours souhaités pour les cours</label>
+    <textarea id="horaire" name="horaire" placeholder="Ex : Lundi et Mercredi de 16h à 18h..."></textarea>
+
+    <label for="profil_souhaite">Dites-nous le profil souhaité</label>
+    <select id="profil_souhaite" name="profil_souhaite">
+      <option value="">-- Choisissez un profil --</option>
+      <option value="repetiteur">Répétiteur</option>
+      <option value="professeur">Professeur</option>
+    </select>
+
+    <label for="emploi_du_temps">Téléversez l'emploi du temps de l'élève</label>
+    <input type="file" id="emploi_du_temps" name="emploi_du_temps" accept=".pdf,.jpg,.png,.jpeg,.doc,.docx">
+
+    <label for="bulletins">Téléversez les derniers bulletins de l'élève</label>
+    <input type="file" id="bulletins" name="bulletins" accept=".pdf,.jpg,.png,.jpeg,.doc,.docx">
+
+    <label for="niveau">Niveau de l'élève/étudiant :</label>
+    <select id="niveau" name="niveau" required>
+      <option value="">-- Sélectionnez le niveau --</option>
+      <option value="CP1">CP1</option>
+      <option value="CP2">CP2</option>
+      <option value="CE1">CE1</option>
+      <option value="CE2">CE2</option>
+      <option value="CM1">CM1</option>
+      <option value="CM2">CM2</option>
+      <option value="6e">6e</option>
+      <option value="5e">5e</option>
+      <option value="4e">4e</option>
+      <option value="3e">3e</option>
+      <option value="2nde">2nde</option>
+      <option value="1ère">1ère</option>
+      <option value="Terminale">Terminale</option>
+      <option value="Classe préparatoire">Classe préparatoire</option>
+      <option value="1re année grande école">1re année (Grande école)</option>
+      <option value="2e année grande école">2e année (Grande école)</option>
+      <option value="3e année grande école">3e année (Grande école)</option>
+      <option value="Licence 1">Licence 1</option>
+      <option value="Licence 2">Licence 2</option>
+      <option value="Licence 3">Licence 3</option>
+      <option value="Master 1">Master 1</option>
+      <option value="Master 2">Master 2</option>
+      <option value="Doctorat">Doctorat</option>
+    </select>
+
+    <label for="matiere">Matière souhaitée</label>
+    <input type="text" id="matiere" name="matiere" placeholder="Ex: Mathématiques, Anglais, Physique...">
+
+    <label for="message">Autres précisions (facultatif)</label>
+    <textarea id="message" name="message" rows="4" placeholder="Votre demande ou précision ici..."></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <footer>
+    &copy; 2025 EDUFORCI - Tous droits réservés.
+  </footer>
 </body>
 </html>
