@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -49,44 +50,6 @@
       max-width: 900px;
       margin: auto;
     }
-    form {
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    form label, form input, form select, form textarea, form button {
-      grid-column: span 2;
-    }
-    input, select, textarea, button {
-      width: 100%;
-      padding: 12px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background-color: #0059b3;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #003366;
-    }
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      margin-top: 40px;
-    }
-    .stats div h3 {
-      font-size: 2em;
-      color: #003366;
-    }
     .btns-links {
       display: flex;
       justify-content: center;
@@ -106,25 +69,6 @@
     .btns-links a:hover {
       background-color: #003366;
     }
-
-    .btn-formulaire {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .btn-formulaire a {
-      background-color: #002b5c;
-      color: white;
-      padding: 15px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-    .btn-formulaire a:hover {
-      background-color: #001933;
-    }
-
     footer {
       text-align: center;
       background-color: #00264d;
@@ -133,12 +77,6 @@
       margin-top: 40px;
     }
     @media screen and (max-width: 600px) {
-      form {
-        grid-template-columns: 1fr;
-      }
-      form label, form input, form select, form textarea, form button {
-        grid-column: span 1;
-      }
       .btns-links {
         flex-direction: column;
         align-items: center;
@@ -159,16 +97,6 @@
 <section class="hero" id="accueil">
   <h2>Bienvenue chez EDUFORCI</h2>
   <p>Réservez facilement des cours à domicile ou en ligne pour vos enfants, avec des enseignants qualifiés.</p>
-</section>
-
-<section id="services">
-  <h2>Nos services</h2>
-  <ul>
-    <li>Cours particuliers à domicile</li>
-    <li>Enseignement en ligne avec suivi personnalisé</li>
-    <li>Préparation aux examens et concours</li>
-    <li>Suivi scolaire hebdomadaire</li>
-  </ul>
 </section>
 
 <section id="temoignages">
@@ -196,21 +124,8 @@
     </div>
   </div>
   <div class="btns-links">
-    <a href="demande-professeur.html">🧑‍🎓 Demande de professeur</a>
+    <a href="formulaire_reservation_parent.html">🧑‍🎓 Demande de professeur</a>
     <a href="recrutement.html">📩 Poser ma candidature</a>
-  </div>
-</section>
-
-<section id="reservation">
-  <h2 style="text-align:center; color:#003366;">Faire une demande de professeur</h2>
-  <p style="text-align:center; max-width:600px; margin:auto;">
-    Vous pouvez faire votre demande directement via le formulaire de réservation de cours.
-    Cliquez ci-dessous pour y accéder :
-  </p>
-  <div class="btn-formulaire">
-    <a href="https://eduforci.github.io/formulaire_reservation_parent.html" target="_blank">
-      📋 Accéder au formulaire de réservation
-    </a>
   </div>
 </section>
 
