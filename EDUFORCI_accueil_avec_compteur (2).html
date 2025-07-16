@@ -1,33 +1,139 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EDUFORCI - Accueil</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EDUFORCI - Réservation de cours</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('accueil.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      border-radius: 0 0 10px 10px;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .btns-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .btns-links a {
+      background-color: #0059b3;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .btns-links a:hover {
+      background-color: #003366;
+    }
+    footer {
+      text-align: center;
+      background-color: #00264d;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media screen and (max-width: 600px) {
+      .btns-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Bienvenue sur EDUFORCI</h1>
-  </header>
+<header>
+  <img src="logo.png" alt="Logo EDUFORCI">
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#inscription">Inscription</a>
+  </nav>
+</header>
 
-  <main>
-    <p>Le site de soutien éducatif pour tous !</p>
-    <!-- Ton contenu principal ici -->
-  </main>
+<section class="hero" id="accueil">
+  <h2>Bienvenue chez EDUFORCI</h2>
+  <p>Réservez facilement des cours à domicile ou en ligne pour vos enfants, avec des enseignants qualifiés.</p>
+</section>
 
-  <footer style="text-align: center; margin-top: 50px;">
-    <p>&copy; 2025 EDUFORCI. Tous droits réservés.</p>
-
-    <!-- 🔴 Compteur de visiteurs (Hitwebcounter) -->
-    <div>
-      <p>Nombre de visiteurs :</p>
-      <a href="https://www.hitwebcounter.com" target="_blank">
-        <img src="https://hitwebcounter.com/counter/counter.php?page=12345678&style=0006&nbdigits=5&type=page&initCount=0"
-          title="Compteur de visites" alt="compteur de visites" style="border:0;" />
-      </a>
+<section id="temoignages">
+  <h2 style="text-align:center; color:#003366;">Témoignages</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
+      <p>“Excellent service, mon fils a fait de grands progrès.”</p>
+      <strong>- Koffi César</strong>
     </div>
-  </footer>
+    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
+      <p>“Très satisfait de l’accompagnement reçu. Je recommande EDUFORCI.”</p>
+      <strong>- Coulibaly Yssouf</strong>
+    </div>
+    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
+      <p>“Les cours en ligne sont efficaces et bien organisés.”</p>
+      <strong>- Mll Ruth</strong>
+    </div>
+    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
+      <p>“Mon enfant a repris confiance grâce au soutien régulier.”</p>
+      <strong>- Konaté N'golo H</strong>
+    </div>
+    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
+      <p>“Une équipe sérieuse, compétente et à l’écoute.”</p>
+      <strong>- Serge Pacôme</strong>
+    </div>
+  </div>
+  <div class="btns-links">
+    <a href="formulaire_reservation_parent.html">🧑‍🎓 Demande de professeur</a>
+    <a href="recrutement.html">📩 Poser ma candidature</a>
+  </div>
+</section>
+
+<footer>
+<!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=21172819&style=0001&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>
+  </div>
+  © 2025 EDUFORCI - Tous droits réservés
+</footer>
 </body>
 </html>
