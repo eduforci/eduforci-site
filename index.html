@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EDUFORCI - Réservation de cours</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
       background-color: #f2f6fc;
       color: #333;
     }
+
     header {
       background-color: #003366;
       color: white;
@@ -21,34 +27,84 @@
       align-items: center;
       justify-content: space-between;
     }
+
     header img {
-      height: 100px;
+      height: 60px;
     }
+
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 600;
     }
+
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('accueil.jpg') center/cover no-repeat;
+      position: relative;
+      min-height: 500px;
+      padding: 80px 20px;
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       border-radius: 0 0 10px 10px;
     }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      z-index: 2;
+      padding: 20px;
+    }
+
     .hero h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
+
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      background: rgba(30, 87, 153, 0.7);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
     }
+
     section {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
+
     .btns-links {
       display: flex;
       justify-content: center;
@@ -56,6 +112,7 @@
       margin-top: 40px;
       flex-wrap: wrap;
     }
+
     .btns-links a {
       background-color: #0059b3;
       color: white;
@@ -65,9 +122,33 @@
       border-radius: 8px;
       transition: background-color 0.3s ease;
     }
+
     .btns-links a:hover {
       background-color: #003366;
     }
+
+    #temoignages h2 {
+      text-align: center;
+      color: #003366;
+      font-size: 2.5rem;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 20px;
+      width: 250px;
+    }
+
+    .temoignage-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
     footer {
       text-align: center;
       background-color: #00264d;
@@ -75,7 +156,14 @@
       padding: 20px;
       margin-top: 40px;
     }
+
     @media screen and (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
       .btns-links {
         flex-direction: column;
         align-items: center;
@@ -84,52 +172,56 @@
   </style>
 </head>
 <body>
-<header>
-  <img src="logo.png" alt="Logo EDUFORCI">
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Services</a>
-    <a href="#inscription">Inscription</a>
-  </nav>
-</header>
+  <header>
+    <img src="logo.png" alt="Logo EDUFORCI">
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#inscription">Inscription</a>
+    </nav>
+  </header>
 
-<section class="hero" id="accueil">
-  <h2>Bienvenue chez EDUFORCI</h2>
-  <p>Réservez facilement des cours à domicile ou en ligne pour vos enfants, avec des enseignants qualifiés.</p>
-</section>
+  <section class="hero" id="accueil">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2>Bienvenue chez EDUFORCI</h2>
+      <p>Réservez facilement des cours à domicile ou en ligne pour vos enfants, avec des enseignants qualifiés.</p>
+    </div>
+  </section>
 
-<section id="temoignages">
-  <h2 style="text-align:center; color:#003366;">Témoignages</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
-    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
-      <p>“Excellent service, mon fils a fait de grands progrès.”</p>
-      <strong>- Koffi César</strong>
+  <section id="temoignages">
+    <h2>Témoignages</h2>
+    <div class="temoignage-grid">
+      <div class="testimonial-card">
+        <p>“Excellent service, mon fils a fait de grands progrès.”</p>
+        <strong>- Koffi César</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>“Très satisfait de l’accompagnement reçu. Je recommande EDUFORCI.”</p>
+        <strong>- Coulibaly Yssouf</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>“Les cours en ligne sont efficaces et bien organisés.”</p>
+        <strong>- Mll Ruth</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>“Mon enfant a repris confiance grâce au soutien régulier.”</p>
+        <strong>- Konaté N'golo H</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>“Une équipe sérieuse, compétente et à l’écoute.”</p>
+        <strong>- Serge Pacôme</strong>
+      </div>
     </div>
-    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
-      <p>“Très satisfait de l’accompagnement reçu. Je recommande EDUFORCI.”</p>
-      <strong>- Coulibaly Yssouf</strong>
+    <div class="btns-links">
+      <a href="formulaire_reservation_parent.html">🧑‍🎓 Demande de professeur</a>
+      <a href="recrutement.html">📩 Poser ma candidature</a>
     </div>
-    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
-      <p>“Les cours en ligne sont efficaces et bien organisés.”</p>
-      <strong>- Mll Ruth</strong>
-    </div>
-    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
-      <p>“Mon enfant a repris confiance grâce au soutien régulier.”</p>
-      <strong>- Konaté N'golo H</strong>
-    </div>
-    <div style="background: #fff; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 20px; width: 250px;">
-      <p>“Une équipe sérieuse, compétente et à l’écoute.”</p>
-      <strong>- Serge Pacôme</strong>
-    </div>
-  </div>
-  <div class="btns-links">
-    <a href="formulaire_reservation_parent.html">🧑‍🎓 Demande de professeur</a>
-    <a href="recrutement.html">📩 Poser ma candidature</a>
-  </div>
-</section>
+  </section>
 
-<footer>
-  © 2025 EDUFORCI - Tous droits réservés
-</footer>
+  <footer>
+    © 2025 EDUFORCI - Tous droits réservés
+  </footer>
 </body>
 </html>
