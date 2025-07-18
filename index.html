@@ -63,17 +63,17 @@
       z-index: 1;
     }
 
-  .hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1470&q=80');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
 
     .hero-content {
       position: relative;
@@ -127,10 +127,38 @@
       background-color: #003366;
     }
 
+    #temoignages {
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1596495578067-1bfc1c3c91a4?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      padding: 60px 20px;
+    }
+
+    #temoignages::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    #temoignages h2,
+    #temoignages .temoignage-grid,
+    #temoignages .btns-links {
+      position: relative;
+      z-index: 2;
+    }
+
     #temoignages h2 {
       text-align: center;
-      color: #003366;
+      color: #fff;
       font-size: 2.5rem;
+      margin-bottom: 30px;
     }
 
     .testimonial-card {
@@ -224,4 +252,4 @@
     © 2025 EDUFORCI - Tous droits réservés
   </footer>
 </body>
-        </html>
+</html>
