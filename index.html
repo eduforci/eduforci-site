@@ -25,23 +25,12 @@
       padding: 10px 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
     header img {
       height: 60px;
-    }
-
-    nav {
-      display: flex;
-      gap: 15px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
     }
 
     .hero {
@@ -168,7 +157,6 @@
       background-color: #003366;
     }
 
-    /* Galerie */
     #galerie {
       background-color: #ffffff;
     }
@@ -186,12 +174,10 @@
       transform: scale(1.05);
     }
 
-    /* Contact */
     #contact {
       background-color: #e6f2ff;
     }
 
-    /* Témoignages avec image de fond */
     #temoignages {
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1596495578067-1bfc1c3c91a4?auto=format&fit=crop&w=1470&q=80');
@@ -244,13 +230,6 @@
     @media screen and (max-width: 600px) {
       .hero h2 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav a {
-        margin-bottom: 10px;
-      }
       .btns-links {
         flex-direction: column;
         gap: 15px;
@@ -262,13 +241,6 @@
 
   <header>
     <img src="logo.png" alt="Logo EDUFORCI">
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#services">Services</a>
-      <a href="#inscription">Inscription</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
   <section class="hero" id="accueil">
@@ -319,7 +291,6 @@
   <section id="contact">
     <h2>Contact</h2>
     <p class="contact-text">Besoin d’aide ? Envoyez-nous un message</p>
-
     <form action="https://formspree.io/f/xyzjqnoe" method="POST" style="margin-top: 30px; max-width: 600px; margin-left:auto; margin-right:auto;">
       <input type="text" name="nom" placeholder="Votre nom" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
       <input type="email" name="email" placeholder="Votre email" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
@@ -364,5 +335,6 @@
     </div>
     <p style="margin-top: 15px;">© 2025 EDUFORCI - Tous droits réservés</p>
   </footer>
+
 </body>
 </html>
