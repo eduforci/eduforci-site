@@ -1,348 +1,736 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EDUFORCI - Réservation de cours</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f2f6fc;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 10px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+<title>EDUFORCI | Soutien scolaire à domicile</title>
 
-    header img {
-      height: 250px;
-    }
+<meta name="description" content="EDUFORCI vous accompagne avec des enseignants qualifiés pour les cours à domicile, les cours en ligne et la préparation aux examens.">
 
-    .hero {
-      position: relative;
-      min-height: 500px;
-      padding: 80px 20px;
-      color: white;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      overflow: hidden;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    .hero-bg {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-    }
+<link rel="stylesheet" href="style.css">
 
-    .hero h2 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    .hero p {
-      font-size: 1.4rem;
-      background: rgba(30, 87, 153, 0.7);
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      color: #003366;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-    }
-
-    .services-container,
-    .temoignage-grid,
-    .galerie-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .service-card,
-    .testimonial-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 250px;
-      text-align: center;
-    }
-
-    .service-card h3 {
-      color: #003366;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .service-card p,
-    .testimonial-card p {
-      color: #555;
-    }
-
-    .testimonial-name {
-      font-weight: bold;
-      font-style: italic;
-      color: #f2f2f2;
-      margin-top: 10px;
-      text-align: right;
-    }
-
-    .inscription-text,
-    .contact-text {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      color: #444;
-    }
-
-    .btns-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .btns-links a {
-      background-color: #0059b3;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .btns-links a:hover {
-      background-color: #003366;
-    }
-
-    #galerie {
-      background-color: #ffffff;
-    }
-
-    .galerie-grid img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .galerie-grid img:hover {
-      transform: scale(1.05);
-    }
-
-    #contact {
-      background-color: #e6f2ff;
-    }
-
-    #temoignages {
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1596495578067-1bfc1c3c91a4?auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-      color: white;
-    }
-
-    #temoignages::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    #temoignages > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    footer {
-      background-color: #00264d;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    @media screen and (max-width: 600px) {
-      .hero h2 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .btns-links {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="logo.png" alt="Logo EDUFORCI">
-  </header>
+<!-- ================= HEADER ================= -->
 
-  <section class="hero" id="accueil">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h2>Bienvenue chez EDUFORCI</h2>
-      <p>Réservez facilement des cours à domicile ou en ligne pour vos enfants, avec des enseignants qualifiés.</p>
+<header class="header">
+
+<div class="container">
+
+<a href="#" class="logo">
+
+<img src="logo.png" alt="EDUFORCI">
+
+</a>
+
+<nav class="navbar">
+
+<a href="#accueil">Accueil</a>
+
+<a href="#apropos">À propos</a>
+
+<a href="#services">Services</a>
+
+<a href="#galerie">Galerie</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="header-buttons">
+
+<a href="formulaire_reservation_parent.html" class="btn btn-primary">
+
+Réserver un professeur
+
+</a>
+
+<a href="formulaire-recrutement.html" class="btn btn-outline">
+
+Devenir enseignant
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="accueil">
+
+<div class="container hero-grid">
+
+<div class="hero-content">
+
+<span class="hero-badge">
+
+🎓 Plateforme de soutien scolaire en Côte d'Ivoire
+
+</span>
+
+<h1>
+
+La réussite scolaire commence avec un excellent enseignant.
+
+</h1>
+
+<p>
+
+EDUFORCI met à votre disposition des enseignants qualifiés pour les cours à domicile, les cours en ligne et la préparation au CEPE, BEPC, BAC et concours.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="formulaire_reservation_parent.html" class="btn btn-primary">
+
+Trouver un professeur
+
+</a>
+
+<a href="#services" class="btn btn-light">
+
+Découvrir nos services
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+
+<h2>500+</h2>
+
+<span>Élèves</span>
+
+</div>
+
+<div>
+
+<h2>120+</h2>
+
+<span>Enseignants</span>
+
+</div>
+
+<div>
+
+<h2>98%</h2>
+
+<span>Satisfaction</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/hero.png" alt="EDUFORCI">
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= COMMENT ÇA MARCHE ================= -->
+
+<section class="process" id="process">
+
+    <div class="container">
+
+        <div class="section-header">
+            <span class="subtitle">Comment ça marche ?</span>
+            <h2>Obtenir un enseignant en 4 étapes</h2>
+            <p>Un processus simple, rapide et efficace.</p>
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-card">
+                <i class="fas fa-edit"></i>
+                <h3>1. Remplissez le formulaire</h3>
+                <p>Indiquez la classe, la matière et votre ville.</p>
+            </div>
+
+            <div class="process-card">
+                <i class="fas fa-user-check"></i>
+                <h3>2. Nous choisissons un enseignant</h3>
+                <p>Nous sélectionnons le professeur adapté à votre besoin.</p>
+            </div>
+
+            <div class="process-card">
+                <i class="fas fa-phone-volume"></i>
+                <h3>3. Confirmation</h3>
+                <p>Notre équipe vous contacte rapidement.</p>
+            </div>
+
+            <div class="process-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>4. Début des cours</h3>
+                <p>Les cours commencent à domicile ou en ligne.</p>
+            </div>
+
+        </div>
+
     </div>
-  </section>
 
-  <section id="services">
-    <h2>Nos Services</h2>
-    <div class="services-container">
-      <div class="service-card">
-        <h3>Cours à domicile</h3>
-        <p>Nos enseignants qualifiés se déplacent à domicile pour donner des cours particuliers personnalisés.</p>
-      </div>
-      <div class="service-card">
-        <h3>Cours en ligne</h3>
-        <p>Profitez de cours interactifs à distance avec nos professeurs expérimentés, où que vous soyez.</p>
-      </div>
-      <div class="service-card">
-        <h3>Soutien scolaire</h3>
-        <p>Un accompagnement adapté pour renforcer les compétences et la confiance de votre enfant.</p>
-      </div>
+</section>
+
+<!-- ================= À PROPOS ================= -->
+
+<section class="about" id="apropos">
+
+    <div class="container about-grid">
+
+        <div class="about-image">
+
+            <img src="images/about.jpg" alt="À propos EDUFORCI">
+
+        </div>
+
+        <div class="about-content">
+
+            <span class="subtitle">À propos de nous</span>
+
+            <h2>Votre partenaire pour la réussite scolaire.</h2>
+
+            <p>
+                EDUFORCI accompagne les élèves du primaire au lycée grâce à des enseignants qualifiés, un suivi personnalisé et des méthodes d'apprentissage efficaces.
+            </p>
+
+            <ul>
+
+                <li><i class="fas fa-check-circle"></i> Enseignants qualifiés</li>
+
+                <li><i class="fas fa-check-circle"></i> Suivi personnalisé</li>
+
+                <li><i class="fas fa-check-circle"></i> Horaires flexibles</li>
+
+                <li><i class="fas fa-check-circle"></i> Préparation aux examens</li>
+
+            </ul>
+
+            <a href="#services" class="btn btn-primary">
+                Découvrir nos services
+            </a>
+
+        </div>
+
     </div>
-  </section>
 
-  <section id="inscription">
-    <h2>Inscription</h2>
-    <p class="inscription-text">Choisissez votre formulaire selon votre profil :</p>
-    <div class="btns-links">
-      <a href="formulaire_reservation_parent.html">👨‍👩‍👧‍👦 Inscription pour les parents</a>
-      <a href="formulaire-recrutement.html">👨‍🏫 Formulaire enseignants</a>
+</section>
+
+<!-- ================= POURQUOI CHOISIR EDUFORCI ================= -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="subtitle">Pourquoi nous choisir ?</span>
+
+            <h2>Les avantages d'EDUFORCI</h2>
+
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <i class="fas fa-award"></i>
+
+                <h3>Qualité</h3>
+
+                <p>Des enseignants rigoureusement sélectionnés.</p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fas fa-book-reader"></i>
+
+                <h3>Accompagnement</h3>
+
+                <p>Chaque élève bénéficie d'un suivi adapté.</p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fas fa-clock"></i>
+
+                <h3>Flexibilité</h3>
+
+                <p>Des horaires adaptés à votre disponibilité.</p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fas fa-chart-line"></i>
+
+                <h3>Résultats</h3>
+
+                <p>Notre priorité est votre réussite scolaire.</p>
+
+            </div>
+
+        </div>
+
     </div>
-  </section>
 
-  <section id="galerie">
-    <h2>Galerie photos</h2>
-    <div class="galerie-grid">
-      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Élève concentré">
-      <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=600&q=80" alt="Professeur donnant cours">
-      <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=600&q=80" alt="Cours à distance">
+</section>
+<!-- ================= NOS SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-header">
+            <span class="subtitle">Nos services</span>
+            <h2>Des solutions adaptées à chaque élève</h2>
+            <p>Nous accompagnons les élèves du primaire au lycée.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3>Cours à domicile</h3>
+                <p>Des enseignants qualifiés se déplacent chez vous.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-laptop"></i>
+                <h3>Cours en ligne</h3>
+                <p>Apprenez partout grâce à des cours interactifs.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-school"></i>
+                <h3>Préparation CEPE</h3>
+                <p>Une préparation complète pour réussir le CEPE.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-book-open"></i>
+                <h3>Préparation BEPC</h3>
+                <p>Révisions intensives, examens blancs et suivi.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Préparation BAC</h3>
+                <p>Un accompagnement sérieux jusqu'à l'examen.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Remise à niveau</h3>
+                <p>Renforcez les bases dans toutes les matières.</p>
+            </div>
+
+        </div>
+
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact-text">Besoin d’aide ? Envoyez-nous un message</p>
-    <form action="https://formspree.io/f/xyzjqnoe" method="POST" style="margin-top: 30px; max-width: 600px; margin-left:auto; margin-right:auto;">
-      <input type="text" name="nom" placeholder="Votre nom" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
-      <input type="email" name="email" placeholder="Votre email" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
-      <textarea name="message" placeholder="Votre message" rows="6" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"></textarea>
-      <button type="submit" style="background-color:#0059b3; color:white; padding:12px 25px; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">📨 Envoyer le message</button>
-    </form>
-  </section>
+</section>
 
-  <section id="temoignages">
-    <h2>Témoignages</h2>
-    <div class="temoignage-grid">
-      <div class="testimonial-card">
-        <p>“Excellent service, mon fils a fait de grands progrès.”</p>
-        <p class="testimonial-name">–Koné Yacouba</p>
-      </div>
-      <div class="testimonial-card">
-        <p>“Très satisfait de l’accompagnement reçu. Je recommande EDUFORCI.”</p>
-        <p class="testimonial-name">–Mahi Esther</p>
-      </div>
-      <div class="testimonial-card">
-        <p>“Les cours en ligne sont efficaces et bien organisés.”</p>
-        <p class="testimonial-name">–Andoh Assi Bénédicte</p>
-      </div>
-      <div class="testimonial-card">
-        <p>“Mon enfant a repris confiance grâce au soutien régulier.”</p>
-        <p class="testimonial-name">–Konaté Awa</p>
-      </div>
-      <div class="testimonial-card">
-        <p>“Une équipe sérieuse, compétente et à l’écoute.”</p>
-        <p class="testimonial-name">–Serge Pacôme Oulaï</p>
-      </div>
+<!-- ================= NOS MATIÈRES ================= -->
+
+<section class="subjects">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="subtitle">Nos matières</span>
+
+            <h2>Des enseignants dans toutes les disciplines</h2>
+
+        </div>
+
+        <div class="subjects-grid">
+
+            <div class="subject-card">
+                <i class="fas fa-language"></i>
+                <h3>Français</h3>
+            </div>
+
+            <div class="subject-card">
+                <i class="fas fa-globe"></i>
+                <h3>Anglais</h3>
+            </div>
+
+            <div class="subject-card">
+                <i class="fas fa-square-root-alt"></i>
+                <h3>Mathématiques</h3>
+            </div>
+
+            <div class="subject-card">
+                <i class="fas fa-flask"></i>
+                <h3>Physique-Chimie</h3>
+            </div>
+
+            <div class="subject-card">
+                <i class="fas fa-leaf"></i>
+                <h3>SVT</h3>
+            </div>
+
+            <div class="subject-card">
+                <i class="fas fa-landmark"></i>
+                <h3>Histoire-Géographie</h3>
+            </div>
+
+            <div class="subject-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Informatique</h3>
+            </div>
+
+            <div class="subject-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Économie</h3>
+            </div>
+
+        </div>
+
     </div>
-  </section>
 
-  <footer>
-    <div class="footer-links">
-      <a href="#accueil">Accueil</a>
-      <a href="#services">Services</a>
-      <a href="#inscription">Inscription</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
+</section>
+
+<!-- ================= NOS CHIFFRES ================= -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+                <h2>500+</h2>
+                <p>Élèves accompagnés</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>120+</h2>
+                <p>Enseignants qualifiés</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>98%</h2>
+                <p>Parents satisfaits</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>20+</h2>
+                <p>Matières enseignées</p>
+            </div>
+
+        </div>
+
     </div>
-    <p style="margin-top: 15px;">© 2025 EDUFORCI - Tous droits réservés</p>
-  </footer>
+
+</section>
+<!-- ================= TÉMOIGNAGES ================= -->
+
+<section class="testimonials" id="temoignages">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="subtitle">Témoignages</span>
+
+            <h2>Ils nous font confiance</h2>
+
+            <p>La satisfaction des parents et des élèves est notre priorité.</p>
+
+        </div>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Grâce à EDUFORCI, ma fille a obtenu son BEPC avec une excellente moyenne. Merci pour votre professionnalisme.
+                </p>
+
+                <h4>Madame Kouamé</h4>
+
+                <span>Parent d'élève</span>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Les enseignants sont compétents, ponctuels et très pédagogues. Je recommande vivement EDUFORCI.
+                </p>
+
+                <h4>Monsieur Traoré</h4>
+
+                <span>Parent d'élève</span>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Mon fils a repris confiance en lui grâce au suivi personnalisé proposé par EDUFORCI.
+                </p>
+
+                <h4>Madame Yao</h4>
+
+                <span>Parent d'élève</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= GALERIE ================= -->
+
+<section class="gallery" id="galerie">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="subtitle">Galerie</span>
+
+            <h2>Nos activités</h2>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <img src="images/galerie1.jpg" alt="Galerie 1">
+
+            <img src="images/galerie2.jpg" alt="Galerie 2">
+
+            <img src="images/galerie3.jpg" alt="Galerie 3">
+
+            <img src="images/galerie4.jpg" alt="Galerie 4">
+
+            <img src="images/galerie5.jpg" alt="Galerie 5">
+
+            <img src="images/galerie6.jpg" alt="Galerie 6">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= APPEL À L'ACTION ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Offrez à votre enfant les meilleures chances de réussir.
+        </h2>
+
+        <p>
+            Rejoignez les nombreuses familles qui font confiance à EDUFORCI pour un accompagnement scolaire de qualité.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="formulaire_reservation_parent.html" class="btn btn-primary">
+                Réserver un professeur
+            </a>
+
+            <a href="formulaire-recrutement.html" class="btn btn-outline">
+                Devenir enseignant
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="subtitle">Contact</span>
+
+            <h2>Parlons de votre projet</h2>
+
+            <p>Notre équipe est à votre écoute pour répondre à toutes vos questions.</p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>07 47 32 73 09</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>Disponible tous les jours</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>contact@eduforci.ci</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <h3>Zone d'intervention</h3>
+                        <p>Côte d'Ivoire</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <form class="contact-form">
+
+                <input type="text" placeholder="Votre nom" required>
+
+                <input type="email" placeholder="Votre adresse e-mail" required>
+
+                <input type="tel" placeholder="Votre numéro de téléphone">
+
+                <textarea rows="6" placeholder="Votre message"></textarea>
+
+                <button type="submit" class="btn btn-primary">
+                    Envoyer
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <img src="logo.png" class="footer-logo" alt="EDUFORCI">
+
+            <p>
+                EDUFORCI accompagne les élèves vers l'excellence grâce à des enseignants qualifiés.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Navigation</h3>
+
+            <a href="#accueil">Accueil</a><br>
+            <a href="#apropos">À propos</a><br>
+            <a href="#services">Services</a><br>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div>
+
+            <h3>Suivez-nous</h3>
+
+            <div class="socials">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 EDUFORCI - Tous droits réservés.
+
+    </div>
+
+</footer>
+
+<!-- Bouton WhatsApp -->
+
+<a href="https://wa.me/2250747327309"
+class="whatsapp-btn"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- Retour en haut -->
+<div class="back-to-top">
+    ↑
+</div>
+<script src="script.js"></script>
 
 </body>
 </html>
